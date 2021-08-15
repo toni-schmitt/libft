@@ -50,36 +50,43 @@ CUT = "\033[K"
 all: $(NAME)
 
 $(NAME): $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
+	@mkdir -p lib
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
 	@echo $(C)Compiling [$(NAME)]...$(X)
 
 $(OBJ_DIR)/%.o: ./src/io/%.c $(HEADER)
 	@echo $(Y)Compiling [$@]...$(X)
+	@mkdir -p obj
 	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
 	@printf $(UP)$(CUT)
 
 $(OBJ_DIR)/%.o: ./src/lst/%.c $(HEADER)
 	@echo $(Y)Compiling [$@]...$(X)
+	@mkdir -p obj
 	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
 	@printf $(UP)$(CUT)
 
 $(OBJ_DIR)/%.o: ./src/mem/%.c $(HEADER)
 	@echo $(Y)Compiling [$@]...$(X)
+	@mkdir -p obj
 	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
 	@printf $(UP)$(CUT)
 
 $(OBJ_DIR)/%.o: ./src/rw/%.c $(HEADER)
 	@echo $(Y)Compiling [$@]...$(X)
+	@mkdir -p obj
 	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
 	@printf $(UP)$(CUT)
 
 $(OBJ_DIR)/%.o: ./src/string/%.c $(HEADER)
 	@echo $(Y)Compiling [$@]...$(X)
+	@mkdir -p obj
 	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
 	@printf $(UP)$(CUT)
 
 $(OBJ_DIR)/%.o: ./src/utils/%.c $(HEADER)
 	@echo $(Y)Compiling [$@]...$(X)
+	@mkdir -p obj
 	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
 	@printf $(UP)$(CUT)
 
