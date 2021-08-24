@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 21:17:10 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/24 16:14:16 by tschmitt         ###   ########.fr       */
+/*   Created: 2021/08/22 20:42:48 by tschmitt          #+#    #+#             */
+/*   Updated: 2021/08/24 16:14:30 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_puterror(char *message)
 {
-	while (s && *s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	if (s && *s == '\0' && c == '\0')
-		return ((char *)s);
-	return (NULL);
+	ft_printf("%s\n", message);
+	exit(EXIT_FAILURE);
+	return (EXIT_FAILURE);
 }

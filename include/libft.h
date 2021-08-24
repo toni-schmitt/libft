@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:23:59 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/15 18:26:17 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/08/24 16:14:46 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int		ft_putptr(void *ptr);
 int		ft_putunbr(unsigned int nbr);
 int		ft_putlhex(unsigned long long nbr);
 int		ft_putuhex(unsigned long long nbr);
+int		ft_puterror(char *message);
 
 /* MEMORY */
 void	*ft_memset(void	*s, int	c, size_t n);
@@ -85,6 +86,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *s);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
+int		ft_issign(char c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
