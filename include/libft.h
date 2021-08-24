@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:23:59 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/24 16:27:05 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/08/24 17:09:24 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /* READ / WRITE */
 char	*get_next_line(int fd);
-int		ft_strlen(const char *s);
-void	*ft_free(void **p);
 
 /* STRING */
 int		ft_strlen(const char *s);
@@ -107,5 +105,7 @@ char	*ft_itoa(int nbr);
 /* UTILS */
 int		ft_hexnbrlen(unsigned long long nbr);
 int		ft_nbrlen(long nbr);
+void	ft_free_split(char **split);
+void	*ft_free(void **p);
 
 #endif
