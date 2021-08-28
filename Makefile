@@ -49,11 +49,12 @@ UP = "\033[A"
 CUT = "\033[K"
 
 all: $(NAME)
+	@echo $(G)Finished...$(X)
 
 $(NAME): $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
 	@mkdir -p lib
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
-	@echo $(C)Compiling [$(NAME)]...$(X)
+	@echo $(Y)Compiling [$(NAME)]...$(X)
 
 $(OBJ_DIR)/%.o: ./src/io/%.c $(HEADER)
 	@echo $(Y)Compiling [$@]...$(X)
