@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:23:59 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/09/02 14:13:02 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/02 14:15:16 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <stddef.h>
 
 /* DEFINES */
 # ifndef FALSE
@@ -72,6 +73,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /* READ / WRITE */
 char	*get_next_line(int fd);
+int		ft_get_line_count(char *path);
 
 /* STRING */
 int		ft_strlen(const char *s);
@@ -80,6 +82,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *s, const char *to_find, size_t n);
+int		ft_strhas(char *str, char *set);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_atoi(const char *str);
@@ -100,9 +103,11 @@ char	**ft_split(const char *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strdup(const char *str);
+char	*ft_strndup(char *str, size_t n);
 char	*ft_append(char **dst, char *src);
 char	*ft_htoa(unsigned long long dec, int uppercase);
 char	*ft_itoa(int nbr);
+char	*ft_getlongeststr(char **array);
 
 /* UTILS */
 int		ft_hexnbrlen(unsigned long long nbr);
