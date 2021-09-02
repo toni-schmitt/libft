@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:23:59 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/24 17:09:24 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/02 14:13:02 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,15 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *s, const char *to_find, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
-int		ft_atoi(const char *s);
+int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_issign(char c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_isspace(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
