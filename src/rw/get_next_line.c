@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:34:18 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/24 16:15:23 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/03 19:19:27 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	*ft_gnlsubstr(char const *s, unsigned long start, size_t len)
 	str_len = ft_strlen(s);
 	if (str_len == 0)
 		return (NULL);
-	substr = malloc(len + 1 * sizeof(*substr));
+	substr = malloc((len + 1) * sizeof(*substr));
 	if (substr == NULL)
 		return (NULL);
 	while (start < str_len && len--)
@@ -75,13 +75,13 @@ char	*get_next_line(int fd)
 	bytes_read = TRUE;
 	if (fd < 0 || BUFFER_SIZE < 0)
 		return (NULL);
-	buffer = malloc(BUFFER_SIZE + 1 * sizeof(*buffer));
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(*buffer));
 	if (buffer == NULL)
 		return (NULL);
 	while (bytes_read > 0 && ft_strchr(line[fd], '\n') == NULL)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		if (bytes_read < 0)
+		if (bytes_read <= 0)
 			break ;
 		buffer[bytes_read] = '\0';
 		line[fd] = ft_append(&line[fd], buffer);
