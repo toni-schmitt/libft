@@ -23,7 +23,8 @@ SRC_STRING = \
 	ft_append.c ft_atoi.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	ft_itoa.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
 	ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strnstr.c ft_strrchr.c ft_strstr.c ft_strtrim.c \
-	ft_substr.c ft_tolower.c ft_toupper.c ft_strhas.c ft_strndup.c ft_htoa.c ft_getlongeststr.c
+	ft_substr.c ft_tolower.c ft_toupper.c ft_strhas.c ft_strndup.c ft_htoa.c ft_getlongeststr.c \
+	ft_atol.c ft_isspace.c
 SRC_UTILS = \
 	ft_free.c ft_hexnbrlen.c ft_nbrlen.c
 
@@ -49,11 +50,12 @@ UP = "\033[A"
 CUT = "\033[K"
 
 all: $(NAME)
+	@echo $(G)Finished...$(X)
 
 $(NAME): $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
 	@mkdir -p lib
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
-	@echo $(C)Compiling [$(NAME)]...$(X)
+	@echo $(Y)Compiling [$(NAME)]...$(X)
 
 $(OBJ_DIR)/%.o: ./src/io/%.c $(HEADER)
 	@echo $(Y)Compiling [$@]...$(X)
