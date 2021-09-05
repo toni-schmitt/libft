@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:23:59 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/09/02 14:15:16 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/05 19:02:50 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ char	*ft_append(char **dst, char *src);
 char	*ft_htoa(unsigned long long dec, int uppercase);
 char	*ft_itoa(int nbr);
 char	*ft_getlongeststr(char **array);
+int		ft_chrcount(const char *str, char ch);
 
 /* UTILS */
 int		ft_hexnbrlen(unsigned long long nbr);
