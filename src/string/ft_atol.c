@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 18:22:02 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/09/03 19:20:25 by tschmitt         ###   ########.fr       */
+/*   Created: 2021/09/02 14:07:55 by tschmitt          #+#    #+#             */
+/*   Updated: 2021/09/02 14:12:55 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+long	ft_atol(const char *str)
 {
-	char	*iterated;
-	int		i;
+	long long	n;
+	int			is_negative;
 
-	if (s == NULL || (*f) == NULL)
-		return (NULL);
-	iterated = malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (iterated == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	n = 0;
+	is_negative = 1;
+	while (ft_isspace(*str))
+		str++;
+	if (ft_issign(*str))
 	{
-		iterated[i] = f(i, s[i]);
-		i++;
+		if (*str == '-')
+			is_negative = -1;
+		str++;
 	}
-	iterated[i] = 0;
-	return (iterated);
+	while (ft_isdigit(*str))
+	{
+		n = (n * 10) + (*str - '0');
+		if (n < 0 && is_negative == -1)
+			return (0);
+		else if (n < 0 && is_negative == 1)
+			return (-1);
+		str++;
+	}
+	return (n * is_negative);
 }

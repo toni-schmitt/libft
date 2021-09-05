@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:43:42 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/15 17:37:25 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/02 14:13:19 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,29 @@ static int	is_sign(const char c)
 	return (0);
 }
 
-int	ft_atoi(const char *s)
+int	ft_atoi(const char *str)
 {
 	long long int	n;
 	int				is_negative;
 
 	n = 0;
 	is_negative = 1;
-	while (is_space(*s))
-		s++;
-	if (is_sign(*s))
+	while (is_space(*str))
+		str++;
+	if (is_sign(*str))
 	{
-		if (*s == '-')
+		if (*str == '-')
 			is_negative = -1;
-		s++;
+		str++;
 	}
-	while (is_digit(*s))
+	while (is_digit(*str))
 	{
-		n = (n * 10) + (*s - '0');
+		n = (n * 10) + (*str - '0');
 		if (n < 0 && is_negative == -1)
 			return (0);
 		else if (n < 0 && is_negative == 1)
 			return (-1);
-		s++;
+		str++;
 	}
 	return (n * is_negative);
 }

@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:23:59 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/29 23:31:43 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/05 19:26:52 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,15 @@ char	*ft_strnstr(const char *s, const char *to_find, size_t n);
 int		ft_strhas(char *str, char *set);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
-int		ft_atoi(const char *s);
+int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_issign(char c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_isspace(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -107,6 +109,7 @@ char	*ft_append(char **dst, char *src);
 char	*ft_htoa(unsigned long long dec, int uppercase);
 char	*ft_itoa(int nbr);
 char	*ft_getlongeststr(char **array);
+int		ft_chrcount(const char *str, char ch);
 
 /* UTILS */
 int		ft_hexnbrlen(unsigned long long nbr);
