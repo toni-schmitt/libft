@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:23:59 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/25 21:33:48 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/08/29 23:31:43 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int		ft_putunbr(unsigned int nbr);
 int		ft_putlhex(unsigned long long nbr);
 int		ft_putuhex(unsigned long long nbr);
 int		ft_puterror(char *message);
+int		putstderr(char *error_message);
 
 /* MEMORY */
 void	*ft_memset(void	*s, int	c, size_t n);
