@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:23:59 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/09/05 19:26:52 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:18:07 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *s, const char *to_find, size_t n);
+char	*ft_strstr(const char *s, const char *to_find);
 int		ft_strhas(char *str, char *set);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
