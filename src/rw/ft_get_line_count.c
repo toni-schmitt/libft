@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 21:31:37 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/25 21:33:17 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/02 19:29:27 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int	ft_get_line_count(char *path)
 		free(line);
 		line = get_next_line(fd);
 	}
+	close(fd);
 	return (lines);
 }

@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 18:02:40 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/15 18:02:57 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/03 19:19:57 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_htoa(unsigned long long dec, int uppcase)
 	int		nbrlen;
 
 	nbrlen = ft_hexnbrlen(dec);
-	hexnum = malloc(nbrlen + 1 * sizeof(*hexnum));
+	hexnum = malloc((nbrlen + 1) * sizeof(*hexnum));
 	if (hexnum == NULL)
 		return (NULL);
 	ptr = hexnum + nbrlen + 1;

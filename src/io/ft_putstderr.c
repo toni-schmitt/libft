@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putstderr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 18:22:02 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/09/03 19:20:25 by tschmitt         ###   ########.fr       */
+/*   Created: 2021/08/29 23:28:54 by tschmitt          #+#    #+#             */
+/*   Updated: 2021/08/29 23:31:37 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	putstderr(char *error_message)
 {
-	char	*iterated;
-	int		i;
-
-	if (s == NULL || (*f) == NULL)
-		return (NULL);
-	iterated = malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (iterated == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		iterated[i] = f(i, s[i]);
-		i++;
-	}
-	iterated[i] = 0;
-	return (iterated);
+	write(2, error_message, ft_strlen(error_message));
+	exit(EXIT_FAILURE);
+	return (EXIT_FAILURE);
 }

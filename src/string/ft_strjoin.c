@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 17:35:48 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/24 19:24:27 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/03 19:20:17 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	joined_len = ft_strlen(s1) + ft_strlen(s2);
 	if (joined_len == 0)
 		return (NULL);
-	joined = malloc(joined_len + 1 * sizeof(*joined));
+	joined = malloc((joined_len + 1) * sizeof(*joined));
 	if (joined == NULL)
 		return (NULL);
 	while (s1 && *s1)
