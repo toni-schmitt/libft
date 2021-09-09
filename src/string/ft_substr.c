@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 16:51:51 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/07/11 16:42:48 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/02 20:02:29 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > (size_t)ft_strlen(s))
 		return (ft_calloc(1, 1));
 	i = 0;
-	substr = malloc(sizeof(char) * len + 1);
+	substr = malloc(sizeof(char) * (len + 1));
 	if (substr == NULL)
 		return (NULL);
 	while (len > 0)
