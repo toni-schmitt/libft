@@ -22,7 +22,7 @@ SRC_RW = \
 SRC_STRING = \
 	ft_append.c ft_atoi.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	ft_itoa.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
-	ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strnstr.c ft_strrchr.c ft_strstr.c ft_strtrim.c \
+	ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strnstr.c ft_strncmp.c ft_strrchr.c ft_strstr.c ft_strtrim.c \
 	ft_substr.c ft_tolower.c ft_toupper.c ft_strhas.c ft_strndup.c ft_htoa.c ft_getlongeststr.c \
 	ft_atol.c ft_isspace.c ft_chrcount.c ft_issign.c
 SRC_UTILS = \
