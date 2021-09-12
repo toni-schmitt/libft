@@ -10,22 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-static int	ft_nbrlen(long nbr)
-{
-	int	count;
-
-	if (nbr == 0)
-		return (1);
-	count = 0;
-	while (nbr != 0)
-	{
-		nbr /= 10;
-		count++;
-	}
-	return (count);
-}
+#include "libft.h"
 
 static char	*ft_assigndigits(char *snbr, long lnbr, int i)
 {
