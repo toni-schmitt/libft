@@ -94,11 +94,12 @@ $(OBJ_DIR)/%.o: ./src/utils/%.c $(HEADER)
 	@printf $(UP)$(CUT)
 
 clean:
-	@echo $(R)Cleaning"  "[$(OBJ_DIR)]...$(X)
+	@echo $(R)Cleaning"  "[$(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)]...$(X)
 	@$(RM) -f $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
 
 fclean: clean
 	@$(RM) -f $(NAME)
+	@echo $(R)Cleaning"  "[$(NAME)]...$(X)
 
 re: fclean all
 
