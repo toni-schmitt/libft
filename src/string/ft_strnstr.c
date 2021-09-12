@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: toni <toni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:30:23 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/07/30 22:27:54 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/12 17:15:30 by toni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ char	*ft_strnstr(const char *s, const char *to_find, size_t n)
 			}
 			if (i == ft_strlen(to_find))
 				return ((char *)s);
+			n += i;
 		}
 		s++;
 		n--;
