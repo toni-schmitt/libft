@@ -25,11 +25,9 @@ static int	ft_get_next_char(char *s, char c)
 
 static int	ft_get_array_size(const char *s, char c)
 {
-	int	nxt_char_pos;
 	int	i;
 
 	i = 0;
-	nxt_char_pos = 0;
 	while (*s)
 	{
 		if (*s != c)
