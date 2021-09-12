@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -21,10 +21,5 @@ void	*ft_calloc(size_t count, size_t size)
 	buf = malloc(full_size);
 	if (buf == NULL)
 		return (NULL);
-	while (full_size > 0)
-	{
-		buf[full_size - 1] = 0;
-		full_size--;
-	}
-	return ((void *)buf);
+	return (ft_memset((void *)buf, 0, full_size));
 }
