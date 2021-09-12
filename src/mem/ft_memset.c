@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: toni <toni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 19:45:41 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/07/16 16:19:25 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/12 16:46:06 by toni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void	*s, int	c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*buf;
 
