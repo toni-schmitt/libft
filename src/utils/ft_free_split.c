@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 17:05:35 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/08/24 17:08:44 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/13 16:44:18 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_free_split(char **split)
 	while (split[i])
 	{
 		free(split[i]);
+		i++;
 	}
 	free(split);
 }
