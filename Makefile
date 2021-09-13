@@ -26,7 +26,7 @@ SRC_STRING = \
 	ft_substr.c ft_tolower.c ft_toupper.c ft_strhas.c ft_strndup.c ft_htoa.c ft_getlongeststr.c \
 	ft_atol.c ft_isspace.c ft_chrcount.c ft_issign.c
 SRC_UTILS = \
-	ft_free.c ft_hexnbrlen.c ft_nbrlen.c
+	ft_free.c ft_hexnbrlen.c ft_nbrlen.c ft_free_split.c
 
 OBJ_DIR = ./obj
 
