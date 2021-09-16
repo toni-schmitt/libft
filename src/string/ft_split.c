@@ -6,14 +6,14 @@
 /*   By: tschmitt <tschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 18:41:59 by tschmitt          #+#    #+#             */
-/*   Updated: 2021/07/17 15:20:10 by tschmitt         ###   ########.fr       */
+/*   Updated: 2021/09/16 16:30:23 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static int	ft_get_next_char(char *s, char c)
+static int	get_next_char(char *s, char c)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ static int	ft_get_array_size(const char *s, char c)
 		if (*s != c)
 		{
 			i++;
-			s = s + ft_get_next_char((char *)s, c);
+			s = s + get_next_char((char *)s, c);
 		}
 		else
 			s++;
@@ -67,27 +67,28 @@ static void	ft_gettochar(const char **s, char c)
 char	**ft_split(const char *s, char c)
 {
 	int		size;
-	int		i;
-	int		j;
+	int		i[2];
 	char	**array;
 
 	if (s == NULL)
 		return (NULL);
 	size = ft_get_array_size(s, c);
+	if (size == 0)
+		return (NULL);
 	array = ft_calloc(size + 1, sizeof(char *));
 	if (array == NULL)
 		return (NULL);
-	i = 0;
-	while (i < size)
+	i[0] = 0;
+	while (i[0] < size)
 	{
 		ft_gettochar(&s, c);
-		array[i] = ft_calloc(ft_get_next_char((char *)s, c) + 1, sizeof(char));
-		if (array[i] == NULL)
+		array[i[0]] = ft_calloc(get_next_char((char *)s, c) + 1, sizeof(char));
+		if (array[i[0]] == NULL)
 			return (ft_free_array(&array, size + 1));
-		j = 0;
+		i[1] = 0;
 		while (*s && *s != c)
-			array[i][j++] = *s++;
-		i++;
+			array[i[0]][i[1]++] = *s++;
+		i[0]++;
 	}
 	return (array);
 }
