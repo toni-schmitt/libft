@@ -50,12 +50,19 @@ UP = "\033[A"
 CUT = "\033[K"
 
 all: $(NAME)
-	@echo $(G)Finished...$(X)
+	@printf "\n"
+	@echo $(G)" __    _ _   ___ _   "
+	@echo $(G)"|  |  |_| |_|  _| |_ "
+	@echo $(G)"|  |__| | . |  _|  _|"
+	@echo $(G)"|_____|_|___|_| |_|  "$(X)
+	@printf "\n\n"
 
 $(NAME): $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
 	@mkdir -p lib
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
 	@echo $(Y)Compiling [$(NAME)]...$(X)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
+	@printf $(UP)$(CUT)
+	@echo $(G)Finished [$(NAME)]...$(X)
 
 $(OBJ_DIR)/%.o: ./src/io/%.c $(HEADER)
 	@echo $(Y)Compiling [$@]...$(X)
@@ -94,12 +101,16 @@ $(OBJ_DIR)/%.o: ./src/utils/%.c $(HEADER)
 	@printf $(UP)$(CUT)
 
 clean:
-	@echo $(R)Cleaning"  "[$(OBJ_DIR)]...$(X)
-	@$(RM) -f $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
+	@if [ -d "${OBJ_DIR}" ]; then \
+		rm -r ${OBJ_DIR}; \
+		echo $(R)Cleaning"  "[$(OBJ_DIR)]...$(X); \
+	fi \
 
 fclean: clean
-	@$(RM) -f $(NAME)
-	@echo $(R)Cleaning"  "[$(NAME)]...$(X)
+	@if [ -f "$(NAME)" ]; then \
+		rm -r $(NAME); \
+		echo $(R)Cleaning" "[$(NAME)]...$(X); \
+	fi \
 
 re: fclean all
 
