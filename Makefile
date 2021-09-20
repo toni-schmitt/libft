@@ -64,37 +64,7 @@ $(NAME): $(OBJ_IO) $(OBJ_LST) $(OBJ_MEM) $(OBJ_RW) $(OBJ_STRING) $(OBJ_UTILS)
 	@printf $(UP)$(CUT)
 	@echo $(G)Finished [$(NAME)]...$(X)
 
-$(OBJ_DIR)/%.o: ./src/io/%.c $(HEADER)
-	@echo $(Y)Compiling [$@]...$(X)
-	@mkdir -p obj
-	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
-	@printf $(UP)$(CUT)
-
-$(OBJ_DIR)/%.o: ./src/lst/%.c $(HEADER)
-	@echo $(Y)Compiling [$@]...$(X)
-	@mkdir -p obj
-	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
-	@printf $(UP)$(CUT)
-
-$(OBJ_DIR)/%.o: ./src/mem/%.c $(HEADER)
-	@echo $(Y)Compiling [$@]...$(X)
-	@mkdir -p obj
-	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
-	@printf $(UP)$(CUT)
-
-$(OBJ_DIR)/%.o: ./src/rw/%.c $(HEADER)
-	@echo $(Y)Compiling [$@]...$(X)
-	@mkdir -p obj
-	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
-	@printf $(UP)$(CUT)
-
-$(OBJ_DIR)/%.o: ./src/string/%.c $(HEADER)
-	@echo $(Y)Compiling [$@]...$(X)
-	@mkdir -p obj
-	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
-	@printf $(UP)$(CUT)
-
-$(OBJ_DIR)/%.o: ./src/utils/%.c $(HEADER)
+$(OBJ_DIR)/%.o: ./src/*/%.c
 	@echo $(Y)Compiling [$@]...$(X)
 	@mkdir -p obj
 	@$(CC) $(CCFLAGS) -I ./include -o $@ -c $<
